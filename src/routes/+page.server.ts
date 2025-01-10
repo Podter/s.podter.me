@@ -26,7 +26,7 @@ export const actions = {
 
 		const slug = nanoid();
 
-		platform?.env.KV.put(slug, form.data.url, {
+		await platform?.env.KV.put(slug, form.data.url, {
 			// @ts-expect-error - Keys are guaranteed to be present
 			expirationTtl: expirationOptions[form.data.expiration].value
 		});
